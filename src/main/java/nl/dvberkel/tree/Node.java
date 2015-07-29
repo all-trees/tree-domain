@@ -6,4 +6,9 @@ class Node implements Tree {
         if (left  == null) { throw new IllegalArgumentException(String.format("%s sub-tree is null", "left")); }
         if (right == null) { throw new IllegalArgumentException(String.format("%s sub-tree is null", "right")); }
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+
+    }
 }
