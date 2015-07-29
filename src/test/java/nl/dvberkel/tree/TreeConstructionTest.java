@@ -6,7 +6,7 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.mock;
 
-public class TreeTest {
+public class TreeConstructionTest {
     @Test
     public void shouldCreateALeafNode() {
         Tree tree = new Leaf();
