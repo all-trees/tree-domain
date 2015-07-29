@@ -1,6 +1,6 @@
 package nl.dvberkel.tree;
 
-class Leaf implements Tree{
+public class Leaf implements Tree{
 
     @Override
     public void accept(Visitor visitor) {

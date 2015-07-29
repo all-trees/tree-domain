@@ -1,6 +1,6 @@
 package nl.dvberkel.tree;
 
-class Node implements Tree {
+public class Node implements Tree {
     private final Tree left;
     private final Tree right;
 

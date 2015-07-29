@@ -1,6 +1,6 @@
 package nl.dvberkel.tree;
 
-interface Tree {
+public interface Tree {
 
     void accept(Visitor visitor);
 }
