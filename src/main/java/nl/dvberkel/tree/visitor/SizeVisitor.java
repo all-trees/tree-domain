@@ -1,7 +1,6 @@
 package nl.dvberkel.tree.visitor;
 
 import nl.dvberkel.tree.Tree;
-import nl.dvberkel.tree.Visitor;
 
 public class SizeVisitor implements Visitor {
     public static int sizeOf(Tree tree) {

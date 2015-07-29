@@ -1,5 +1,7 @@
 package nl.dvberkel.tree;
 
+import nl.dvberkel.tree.visitor.Visitor;
+
 public class Node implements Tree {
     private final Tree left;
     private final Tree right;

@@ -1,5 +1,6 @@
 package nl.dvberkel.tree;
 
+import nl.dvberkel.tree.visitor.Visitor;
 import org.junit.Test;
 
 import static org.mockito.Mockito.mock;
