@@ -15,5 +15,19 @@ public class TreeVisitorTest {
 
         verify(visitor).visit(leaf);
     }
+
+    @Test
+    public void NodeShouldAcceptVisitor() {
+        Tree left = new Leaf();
+        Tree right = new Leaf();
+        Tree node = new Node(left, right);
+        Visitor visitor = mock(Visitor.class);
+
+        node.accept(visitor);
+
+        verify(visitor).visit(left);
+        verify(visitor).visit(right);
+        verify(visitor).visit(node);
+    }
 }
 
