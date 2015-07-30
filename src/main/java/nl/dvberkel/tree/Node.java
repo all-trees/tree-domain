@@ -19,4 +19,12 @@ public class Node implements Tree {
         right.accept(visitor);
         visitor.visit(this);
     }
+
+    public Tree left() {
+        return left;
+    }
+
+    public Tree right() {
+        return right;
+    }
 }
