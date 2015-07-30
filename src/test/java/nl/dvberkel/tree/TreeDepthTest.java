@@ -1,8 +1,5 @@
-package nl.dvberkel.tree.visitor;
+package nl.dvberkel.tree;
 
-import nl.dvberkel.tree.Leaf;
-import nl.dvberkel.tree.Node;
-import nl.dvberkel.tree.Tree;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -10,16 +7,16 @@ import org.junit.runners.Parameterized;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static nl.dvberkel.tree.visitor.DepthVisitor.depthOf;
+import static nl.dvberkel.tree.Tree.depthOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 @RunWith(Parameterized.class)
-public class DepthVisitorTest {
+public class TreeDepthTest {
     private final Tree tree;
     private final int expectedDepth;
 
-    public DepthVisitorTest(Tree tree, int expectedDepth) {
+    public TreeDepthTest(Tree tree, int expectedDepth) {
         this.tree = tree;
         this.expectedDepth = expectedDepth;
     }

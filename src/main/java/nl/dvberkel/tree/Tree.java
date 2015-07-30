@@ -1,8 +1,23 @@
 package nl.dvberkel.tree;
 
-import nl.dvberkel.tree.visitor.Visitor;
+import static java.lang.Math.max;
 
 public interface Tree {
+    static int sizeOf(Tree tree) {
+        if (tree instanceof Node) {
+            Node node = (Node) tree;
+            return sizeOf(node.left()) + sizeOf(node.right()) + 1;
+        } else {
+            return 1;
+        }
+    }
 
-    void accept(Visitor visitor);
+    static int depthOf(Tree tree) {
+        if (tree instanceof Node) {
+            Node node = (Node) tree;
+            return max(depthOf(node.left()), depthOf(node.right())) + 1;
+        } else {
+            return 0;
+        }
+    }
 }
