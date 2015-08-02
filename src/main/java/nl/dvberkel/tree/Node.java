@@ -21,11 +21,11 @@ public class Node implements Tree {
 
     @Override
     public int size() {
-        return left.size() + right.size() + 1;
+        return left().size() + right().size() + 1;
     }
 
     @Override
     public int depth() {
-        return max(left.depth(), right.depth()) + 1;
+        return max(left().depth(), right().depth()) + 1;
     }
 }
