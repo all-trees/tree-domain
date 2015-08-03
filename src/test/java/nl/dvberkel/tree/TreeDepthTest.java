@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static nl.dvberkel.tree.Tree.depthOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -23,7 +22,7 @@ public class TreeDepthTest {
 
     @Test
     public void shouldDetermineDepthOfATree() {
-        assertThat(depthOf(tree), is(expectedDepth));
+        assertThat(tree.depth(), is(expectedDepth));
     }
 
     @Parameterized.Parameters

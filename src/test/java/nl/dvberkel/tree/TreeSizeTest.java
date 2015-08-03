@@ -7,7 +7,6 @@ import org.junit.runners.Parameterized;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import static nl.dvberkel.tree.Tree.sizeOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
@@ -23,7 +22,7 @@ public class TreeSizeTest {
 
     @Test
     public void shouldCountTheNumberOfNodesAndLeafs() {
-        assertThat(sizeOf(tree), is(expectedSize));
+        assertThat(tree.size(), is(expectedSize));
     }
 
     @Parameterized.Parameters
