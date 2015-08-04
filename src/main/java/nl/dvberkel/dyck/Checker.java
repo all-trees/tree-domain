@@ -1,6 +1,19 @@
 package nl.dvberkel.dyck;
 
 public class Checker {
+    private final String left;
+    private final String right;
+
+    public Checker() {
+        this("1", "2");
+    }
+
+    public Checker(String left, String right) {
+
+        this.left = left;
+        this.right = right;
+    }
+
     public boolean check(String word) {
         boolean valid = imbalance(word) == 0;
         int prefixLength = word.length() - 1;
@@ -13,7 +26,7 @@ public class Checker {
     }
 
     private int imbalance(String word) {
-        return count(word, "1") - count(word, "2");
+        return count(word, left) - count(word, right);
     }
 
     private int count(String word, String substring) {
