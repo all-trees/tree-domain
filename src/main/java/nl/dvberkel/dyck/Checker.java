@@ -25,7 +25,7 @@ public class Checker {
         return valid;
     }
 
-    private int imbalance(String word) {
+    protected int imbalance(String word) {
         return count(word, left) - count(word, right);
     }
 
