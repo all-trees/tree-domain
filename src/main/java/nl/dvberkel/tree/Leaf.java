@@ -10,4 +10,14 @@ public class Leaf implements Tree{
     public int depth() {
         return 0;
     }
+
+    @Override
+    public int hashCode() {
+        return 31;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return obj != null && this.getClass().equals(obj.getClass());
+    }
 }

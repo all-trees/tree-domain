@@ -28,4 +28,23 @@ public class Node implements Tree {
     public int depth() {
         return max(left().depth(), right().depth()) + 1;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Node node = (Node) o;
+
+        if (!left().equals(node.left())) return false;
+        return right().equals(node.right());
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = left().hashCode();
+        result = 31 * result + right().hashCode();
+        return result;
+    }
 }
