@@ -9,8 +9,12 @@ public class Builder {
     private final Decomposer decomposer;
 
     public Builder() {
-        checker = new Checker();
-        decomposer = new Decomposer();
+        this(new Checker());
+    }
+
+    public Builder(Checker checker) {
+        this. checker = checker;
+        decomposer = new Decomposer(checker);
     }
 
     /**

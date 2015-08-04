@@ -4,7 +4,11 @@ public class Decomposer {
     private Checker checker;
 
     public Decomposer() {
-        checker = new Checker();
+        this(new Checker());
+    }
+
+    public Decomposer(Checker checker) {
+        this.checker = checker;
     }
 
     public String[] decompose(String word) {
