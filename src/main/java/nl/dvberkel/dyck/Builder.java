@@ -5,6 +5,7 @@ import nl.dvberkel.tree.Node;
 import nl.dvberkel.tree.Tree;
 
 public class Builder {
+    public static final String EMPTY_WORD = "";
     private final Checker checker;
     private final Decomposer decomposer;
 
@@ -29,7 +30,7 @@ public class Builder {
      */
     public Tree build(String word) {
         if (!checker.check(word)) { throw new IllegalArgumentException(String.format("\"%s\" is not a Dyck word", word));}
-        if (word.equals("")) {
+        if (word.equals(EMPTY_WORD)) {
             return new Leaf();
         } else {
             String[] decomposition = decomposer.decompose(word);
