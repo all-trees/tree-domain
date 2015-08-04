@@ -39,7 +39,7 @@ public class DecomposerTest {
 
     @Parameterized.Parameters(name = "{0} should decompose into {1}")
     public static Collection<Object[]> data() {
-        ArrayList<Object[]> data = new ArrayList<Object[]>();
+        Collection<Object[]> data = new ArrayList<Object[]>();
         data.add(new Object[]{"12", new String[]{"", ""}});
         data.add(new Object[]{"1122", new String[]{"12", ""}});
         data.add(new Object[]{"1212", new String[]{"", "12"}});

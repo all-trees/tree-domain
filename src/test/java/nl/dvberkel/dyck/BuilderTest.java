@@ -42,7 +42,7 @@ public class BuilderTest {
 
     @Parameterized.Parameters(name = "should construct correct tree of {0}")
     public static Collection<Object[]> data() {
-        ArrayList<Object[]> data = new ArrayList<Object[]>();
+        Collection<Object[]> data = new ArrayList<Object[]>();
         data.add(new Object[]{ "12", new Node(new Leaf(), new Leaf())});
         return data;
     }

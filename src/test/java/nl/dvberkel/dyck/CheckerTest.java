@@ -34,7 +34,7 @@ public class CheckerTest {
 
     @Parameterized.Parameters(name = "is {0} a Dyck word? {1}")
     public static Collection<Object[]> data() {
-        ArrayList<Object[]> data = new ArrayList<Object[]>();
+        Collection<Object[]> data = new ArrayList<Object[]>();
         data.add(aDyckWord(""));
         data.add(aDyckWord("12"));
         data.add(aDyckWord("1212"));
