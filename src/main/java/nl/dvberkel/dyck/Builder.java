@@ -14,7 +14,7 @@ public class Builder {
     }
 
     public Builder(Checker checker) {
-        this. checker = checker;
+        this.checker = checker;
         decomposer = new Decomposer(checker);
     }
 
