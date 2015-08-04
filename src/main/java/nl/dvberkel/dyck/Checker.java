@@ -1,5 +1,9 @@
 package nl.dvberkel.dyck;
 
+import java.util.Iterator;
+
+import static nl.dvberkel.dyck.PrefixIterator.prefixesOf;
+
 public class Checker {
     private final String left;
     private final String right;
@@ -15,14 +19,20 @@ public class Checker {
     }
 
     public boolean check(String word) {
-        boolean valid = imbalance(word) == 0;
-        int prefixLength = word.length() - 1;
-        while (valid && prefixLength > 0) {
-            String prefix = word.substring(0, prefixLength);
-            valid = imbalance(prefix) >= 0;
-            prefixLength--;
+        return noImbalance(word) && prefixesHaveNonNegativeImbalance(word);
+    }
+
+    private boolean noImbalance(String word) {
+        return imbalance(word) == 0;
+    }
+
+    private boolean prefixesHaveNonNegativeImbalance(String word) {
+        for (String prefix : prefixesOf(word)) {
+            if (imbalance(prefix) < 0) {
+                return false;
+            }
         }
-        return valid;
+        return true;
     }
 
     protected int imbalance(String word) {
@@ -37,5 +47,29 @@ public class Checker {
             }
         }
         return count;
+    }
+}
+
+class PrefixIterator implements Iterator<String> {
+    public static Iterable<String> prefixesOf(String word) {
+        return () -> new PrefixIterator(word);
+    }
+
+    private final String word;
+    private int prefixLength;
+
+    private PrefixIterator(String word) {
+        this.word = word;
+        this.prefixLength = word.length() - 1;
+    }
+
+    @Override
+    public boolean hasNext() {
+        return prefixLength > 0;
+    }
+
+    @Override
+    public String next() {
+        return word.substring(0, prefixLength--);
     }
 }
