@@ -5,10 +5,12 @@ import nl.dvberkel.tree.Node;
 import nl.dvberkel.tree.Tree;
 
 public class Builder {
-    Checker checker;
+    private final Checker checker;
+    private final Decomposer decomposer;
 
     public Builder() {
         checker = new Checker();
+        decomposer = new Decomposer();
     }
 
     /**
@@ -23,6 +25,11 @@ public class Builder {
      */
     public Tree build(String word) {
         if (!checker.check(word)) { throw new IllegalArgumentException(String.format("\"%s\" is not a Dyck word", word));}
-        return new Node(new Leaf(), new Leaf());
+        if (word.equals("")) {
+            return new Leaf();
+        } else {
+            String[] decomposition = decomposer.decompose(word);
+            return new Node(build(decomposition[0]), build(decomposition[1]));
+        }
     }
 }

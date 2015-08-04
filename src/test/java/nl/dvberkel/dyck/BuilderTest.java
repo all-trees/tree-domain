@@ -44,6 +44,8 @@ public class BuilderTest {
     public static Collection<Object[]> data() {
         Collection<Object[]> data = new ArrayList<Object[]>();
         data.add(new Object[]{ "12", new Node(new Leaf(), new Leaf())});
+        data.add(new Object[]{ "1212", new Node(new Leaf(), new Node(new Leaf(), new Leaf()))});
+        data.add(new Object[]{ "1122", new Node(new Node(new Leaf(), new Leaf()), new Leaf())});
         return data;
     }
 }
