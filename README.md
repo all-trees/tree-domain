@@ -7,5 +7,6 @@ Usage
 -----
 
 ```java
-Tree tree = new Node(new Leaf(), new Leaf());
+Builder builder = new Builder(new Checker("(", ")"));
+Tree tree = builder.build("()(())");
 ```
