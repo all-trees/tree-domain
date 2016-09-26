@@ -6,6 +6,7 @@ before_install:
     openssl aes-256-cbc -k "$MASTER_PASSWORD" -in secring.gpg.enc -out
     secring.gpg -d
   - openssl aes-256-cbc -k "$MASTER_PASSWORD" -in pubring.gpg.enc
+script: mvn package --settings settings.xml
 env:
   global:
     - secure: >-
