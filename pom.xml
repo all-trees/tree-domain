@@ -19,6 +19,15 @@
         </license>
     </licenses>
 
+    <developers>
+        <developer>
+            <name>Daan van Berkel</name>
+            <email>daan@fifth-postulate.nl</email>
+            <organization>Fifth Postulate</organization>
+            <organizationUrl>http://fifth-postulate.nl</organizationUrl>
+        </developer>
+    </developers>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
