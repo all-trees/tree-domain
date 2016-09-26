@@ -8,6 +8,10 @@
     <artifactId>tree.domain</artifactId>
     <version>1.0.2-SNAPSHOT</version>
 
+    <name>Tree Domain</name>
+    <description>Code to model the binary tree domain</description>
+    <url>https://github.com/all-trees/tree-domain</url>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
