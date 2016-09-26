@@ -7,6 +7,7 @@
     <groupId>nl.dvberkel</groupId>
     <artifactId>tree.domain</artifactId>
     <version>1.0.2-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <name>Tree Domain</name>
     <description>Code to model the binary tree domain</description>
