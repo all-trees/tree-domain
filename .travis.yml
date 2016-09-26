@@ -1,3 +1,16 @@
 language: java
 jdk:
   - oraclejdk8
+before_install:
+  - >-
+    openssl aes-256-cbc -k "$MASTER_PASSWORD" -in secring.gpg.enc -out
+    secring.gpg -d
+  - openssl aes-256-cbc -k "$MASTER_PASSWORD" -in pubring.gpg.enc
+env:
+  global:
+    - secure: >-
+        wDq8sI4RUB0VPyg+UPcocr9jmn/X+kEcVIfU9J7fgcU/rsdp198uNhj+Jy6NFtG1R12IySTmwEte4cb+DXrppzSP2NSQZoSLsvdtQrtZS4vi/8xGOAytX237RK0pzBzTy0M902rby9T6w+7XFcgLDlYCFZ8wJZ80XTBCKJ+8567/uYAI6VLgiJfyM53lVPpUtu+m+fQ35rgcSYRlVObcvkDlvs5FppbnggPXnRtXonuOLLFv0D5lGsCde5vwKbK/nQxCzCXzylnBDWgshfQpdasSLh932s6eyojrpy+jEE9DFn87kx2Sti/LjOPXUyjIadznzSjUEBX+F3nOH7/eqa+gO5fiKHx5Wxryr5BAwAo5tIK2vIWC4FeEEQlNfZz8sek0NJ1JwZAutk+rK0UxTC2z+x06oyDme7jWvaEVCj72+OieGpq555/Hp1xbiQ+ON3/J9d8dY2PtupEMRclOQw2LCzmCCyt3DHOu2KFmTOt4tqdGMOTy3yue1qcf3ilMxC9d3Na/meYaAkeMnbmftVGNm17Je5xK6kNMXeNKVMDBgefa70BDumh6p/qqQlqJq8wJYegy49raCF5qjGlLRC/lf6KAwwOPhLJBisld5ZE7PmZcas2lL0e2NNIigdwZXvU1cYTTf4/ljer/mx1pLP2/TTKnVk+IG4x8YKbwhdk=
+    - secure: >-
+        ABRNaQHn5G8+6fb4gAlqkzA9R3si9lXnSvAjLht69yOTagTfScw4T7U04nVjgBQM5dXKCgTDOzsZhq0R+Rk/JJCTjJrocKXBoy/JGGjk3TGRkBWoL7RewXu70FPAxUwpuLxQdefLlKdr40XtRaf2g61RIuo1bKLYekmxnbpZqJazF03r/vkll9dPzzuhoGtJ8A+ugM6Q5si9OU6k5cGRK3jAfZv1JJTsnlalf2A9yMjTqDmt5Jq+W8broK9gKsXyx69Wa252bcFVWqC5heN1OW5vQq5xgT6cJiyUqu6FZG6/a6mCzJhPSGjYa+j9fXEQpaw0qDEImiGJ5R3+Q9kTrB6iNC+bxQ0R6Md8Y4/FItzSV0cJZ4SLWCw5E7zmrSdnH0mfiUbS1gnwbTEdpXz9Xyt6NjIupmBzvH3lbsyIdXvzRqUVsrQ+Vg9BNDyRDVbxYb29RTZqCLWjQIIDAxAGH4eCSztENWwIQVZea66eZ1LRFBTwLWyWylmxG602ScRMIfFDlOpKUFMx8A8AFpdCRdV1lzD08BMHqzn4g2+1k5vMG5oCpsLMiP8b/faEC99ojkJXwWSr5rxGO/1vvD0TKovOVll2nKkbEEQrCyWFpjuwBCfRHd+DHqPrmnRWb7IROpGPVOBSdoSHtzZeTPrIhP4M3NFWI+TSxU4gmpjwhMA=
+    - secure: >-
+        PlVCITcimBCU7oCnF9m/FLsnAnDbhpdXIc2X6D8YHWmcnewUDthDzqljLFKNMO4ahYNgQGxUwefl/HzXxXzUeTk9+XblAbwWVbJC5yRiQwSPIzKmC2XnpriFzKXo+r9qssweG9DCgpoeoL6hBbA/tujOJ5vHoTsYn5zQ9KeUHSHeDUpTqBxuxHYZ+HVmiXDa9bywCRjRRsvnr5kQWHRQJqvuXe227HlUL2Xl29noVpCUfcgRfqWbzLpdYEXQ95gy1LkjpCqE/zUPJeuBPIAS+i8DrUFF/8ze/qaJkCRfuAzn9DDIaASsFUBJyXHFKWfmwrwuKXM4+4v6OckalN0mpsmBGUmutTAf5f2COlFUWUJGAFmQ+pO85jUf5iAJkNGttl9Nbgc/gl/NKEtZwmHyP0DwSEPetT/yL03yf1a4RtzRXkJjKcy+rKikksaPPXn1gbDm1hr1ErFIZT8ma5HD/mGVunRs6p2gDU+5PZeX5zHgkVa7Be/w7ffsAkVzEG0x+/53ZC4cHmqQfydZvh6sMexYGqj42nJF+Lj5SKlunHXP9npchHeNpPh/FI0OJ4JaGXTfpiUUogPLU1OmsunO7fGdNdV8l4Z9p//eRRyI2vVLOP7fGNlxfWUTEGAV3/b+Ua9UNrzxO/vam/uJGhbkMBJ+CxyGfLGiBly1aQiE9Vs=
