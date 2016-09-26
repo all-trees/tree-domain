@@ -28,6 +28,12 @@
         </developer>
     </developers>
 
+    <scm>
+        <connection>scm:git:git://github.com/all-trees/tree-domain.git</connection>
+        <developerConnection>scm:git:ssh://github.com:all-trees/tree-domain.git</developerConnection>
+        <url>http://github.com/all-trees/tree-domain/tree/master</url>
+    </scm>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
