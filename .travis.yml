@@ -3,13 +3,12 @@ jdk:
   - oraclejdk8
 before_install:
   - >-
-    openssl aes-256-cbc -k "$MASTER_PASSWORD" -in secring.gpg.enc -out $GPG_DIR/secring.gpg -d
-  - openssl aes-256-cbc -k "$MASTER_PASSWORD" -in pubring.gpg.enc -out $GPG_DIR/pubring.gpg -d
+    openssl aes-256-cbc -k "$MASTER_PASSWORD" -in secring.gpg.enc -out secring.gpg -d
+  - openssl aes-256-cbc -k "$MASTER_PASSWORD" -in pubring.gpg.enc -out pubring.gpg -d
 install: mvn install --settings settings.xml -DskipTests=true -Dmaven.javadoc.skip=true -B -V 
 script: mvn package --settings settings.xml
 env:
   global:
-    - GPG_DIR = "`pwd`"
     - secure: >-
         wDq8sI4RUB0VPyg+UPcocr9jmn/X+kEcVIfU9J7fgcU/rsdp198uNhj+Jy6NFtG1R12IySTmwEte4cb+DXrppzSP2NSQZoSLsvdtQrtZS4vi/8xGOAytX237RK0pzBzTy0M902rby9T6w+7XFcgLDlYCFZ8wJZ80XTBCKJ+8567/uYAI6VLgiJfyM53lVPpUtu+m+fQ35rgcSYRlVObcvkDlvs5FppbnggPXnRtXonuOLLFv0D5lGsCde5vwKbK/nQxCzCXzylnBDWgshfQpdasSLh932s6eyojrpy+jEE9DFn87kx2Sti/LjOPXUyjIadznzSjUEBX+F3nOH7/eqa+gO5fiKHx5Wxryr5BAwAo5tIK2vIWC4FeEEQlNfZz8sek0NJ1JwZAutk+rK0UxTC2z+x06oyDme7jWvaEVCj72+OieGpq555/Hp1xbiQ+ON3/J9d8dY2PtupEMRclOQw2LCzmCCyt3DHOu2KFmTOt4tqdGMOTy3yue1qcf3ilMxC9d3Na/meYaAkeMnbmftVGNm17Je5xK6kNMXeNKVMDBgefa70BDumh6p/qqQlqJq8wJYegy49raCF5qjGlLRC/lf6KAwwOPhLJBisld5ZE7PmZcas2lL0e2NNIigdwZXvU1cYTTf4/ljer/mx1pLP2/TTKnVk+IG4x8YKbwhdk=
     - secure: >-
